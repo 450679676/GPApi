@@ -82,3 +82,17 @@ api_info = dict(
 
 
 )
+
+def test_todo_list():
+    api_name = "任务列表"
+    res = session.request(
+        api_info[api_name].method,
+        f"{base_url}{api_info[api_name].url}",
+        params=api_info[api_name].params
+
+    )
+    print(res.status_code)
+
+
+
+

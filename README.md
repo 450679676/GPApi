@@ -158,5 +158,23 @@ def test_token_user(self):
     assert res.status_code == api_info[api_name].code
 ```
 
+后面的几乎所有的接口都需要鉴权信息 那么如果都想上面一样 就太啰嗦了  所以使用夹具来管理 是比较合适的
 
+## 配置conftest文件
+
+在conftest中 配置公共方法  conftest是pytest的配置文件 在测试启动前首先加载  所以把大部分用例都需要的方法和变量放在该文件中 
+
+## `conftest`的作用域
+
+一个`conftest`只能被当前目录和其子目录所访问 
+
+一个子目录中的`conftest`文件不能被根目录中的其他目录所访问 
+
+也就是说可以 在每一个需要的子目录中新建`conftest` 配置文件
+
+如果创建了一个与上级目录同名的夹具 `pytest` 会优先使用 当前目录的夹具
+
+## conftest内配置鉴权
+
+**conftest.py**
 
