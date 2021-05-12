@@ -25,7 +25,7 @@ class LoggerSession(requests.Session):
 
         self.logger.info(f"接收响应>>>> 状态码= {response.status_code}")
         self.logger.debug(f"接收响应>>>> 响应头= {response.headers}")
-        self.logger.debug(f"接收响应>>>> 请求正文= {response.text}")
+        self.logger.debug(f"接收响应>>>> 响应正文= {response.text}")
         return response
 
 

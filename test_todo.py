@@ -1,8 +1,5 @@
 from collections import namedtuple
 import time
-from log import LoggerSession
-import pytest
-session = LoggerSession()
 base_url = "https://api.tttt.one/rest-v2"
 
 api_info_temp= namedtuple("api_info", ['method','url','body',"params",'code','res_body'])
@@ -83,15 +80,15 @@ api_info = dict(
 
 )
 
-def test_todo_list():
+def test_todo_list(user_session):
     api_name = "任务列表"
-    res = session.request(
+    res = user_session.request(
         api_info[api_name].method,
         f"{base_url}{api_info[api_name].url}",
         params=api_info[api_name].params
 
     )
-    print(res.status_code)
+    assert res.status_code == api_info[api_name].code
 
 
 
