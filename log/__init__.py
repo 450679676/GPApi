@@ -3,6 +3,8 @@ from requests import Response, PreparedRequest
 import logging
 logging.basicConfig(
     level=logging.DEBUG,
+    format="%(asctime)s: %(levelname)s: %(lineno)s %(message)s",
+    filename=('./log/log.log')
 
 
 )#日志的格式
