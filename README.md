@@ -63,7 +63,7 @@ def test_login_sign_up():
 
 ### 封装请求参数
 
-吧注册接口所用到的所有请求体 和断言 封装在一个容器中
+把接口所用到的所有请求体 和断言 封装在一个容器中
 
 ```python
 from collections import namedtuple
@@ -107,10 +107,30 @@ api_info = dict(
 ### 用例调用参数
 
 ```python
+
+def test_user_login():
+    api_name = "登录"
+    res = session.request(
+        api_info[api_name].method,
+        f"{base_url}{api_info[api_name].url}",
+        json=api_info[api_name].body
+    )
+    assert res.status_code == api_info[api_name].code
+```
+
+
+
+## 随机注册数据不同用户
+
+```python
+import time #导入时间模块
+
+
 class Test_Run_user:
     def test_login_sign_up(self):
         """
         测试注册
+        生成时间戳 作为账号密码进行注册
         """
         email = f"{time.time():.2f}@121"
         password = email

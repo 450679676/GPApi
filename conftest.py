@@ -3,7 +3,7 @@ import jsonpath
 import pytest
 base_url = "https://api.tttt.one/rest-v2"
 session = LoggerSession()
-@pytest.fixture()
+@pytest.fixture() #加上 autouse =True 后报错
 def get_jaon(res,key):
     """
     :param res: 返回数据
