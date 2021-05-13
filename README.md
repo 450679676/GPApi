@@ -4,13 +4,13 @@
 项目地址：Todo list - Vue.js
 接口文档：三木的接口自动化测试练习v2 - Swagger UI
 接口协议 ：Restful API （OpenAPI3.0）
-接口地址1：http://127.0.0.1:8000/login/access_token
-接口地址2：http://127.0.0.1:8000/login/sign_up
+接口地址1：https://api.tttt.one/rest-v2/login/access_token
+接口地址2：https://api.tttt.one/rest-v2/login/sign_up
 接口地址3: http://127.0.0.1:8000/todo
 其他信息：
-接口的BaseURL ： http://127.0.0.1:8000
+接口的BaseURL ： https://api.tttt.one/rest-v2
  登录后才可用使用系统
-部分接口会返回204 （例如 DELETE http://127.0.0.1:8000/todo/3）
+部分接口会返回204 （例如 DELETE https://api.tttt.one/rest-v2/todo/3）
 
 ## 搭建环境
 
