@@ -200,6 +200,8 @@ def test_token_user(self):
 
 ### conftest内配置json提取器
 
+**在conftest中配置后调用会报错  所以将此方法 转移到单独模块中使用**
+
 ```python
 import jsonpath
 

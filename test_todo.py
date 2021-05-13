@@ -10,7 +10,7 @@ api_info = dict(
         url= "/todo",
         body= {},
         params={
-            "page": 10,
+            "page": 0,
             "zise": 50
         },
         code=200,
@@ -80,6 +80,7 @@ api_info = dict(
 
 )
 
+from acquireJSON import  *
 def test_todo_list(user_session):
     api_name = "任务列表"
     res = user_session.request(
@@ -89,7 +90,6 @@ def test_todo_list(user_session):
 
     )
     assert res.status_code == api_info[api_name].code
-
 
 
 
