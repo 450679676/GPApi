@@ -1,6 +1,7 @@
 import requests
 from requests import Response, PreparedRequest
 import logging
+import json
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s: %(levelname)s: %(lineno)s %(message)s",
@@ -27,7 +28,7 @@ class LoggerSession(requests.Session):
 
         self.logger.info(f"接收响应>>>> 状态码= {response.status_code}")
         self.logger.debug(f"接收响应>>>> 响应头= {response.headers}")
-        self.logger.debug(f"接收响应>>>> 响应正文= {response.text}")
+        self.logger.debug(f"接收响应>>>> 响应正文= {json.dumps(response.json(),indent=True)}")
         return response
 
 
