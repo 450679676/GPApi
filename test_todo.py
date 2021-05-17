@@ -1,5 +1,6 @@
 from collections import namedtuple
 import time
+import pytest
 base_url = "https://api.tttt.one/rest-v2"
 
 api_info_temp= namedtuple("api_info", ['method','url','body',"params",'code','res_body'])
@@ -91,5 +92,66 @@ def test_todo_list(user_session):
     )
     assert res.status_code == api_info[api_name].code
 
+@pytest.mark.parametrize(
+    'params',[{'result':{"code":200,"res_body":{
+  "items": [
+    {
+      "id": 2147483647,
+      "title": "null",
+      "is_done": False,
+      "create_datetime": "2021-05-17T13:46:10.332Z",
+      "done_datetime": "2021-05-17T13:46:10.332Z"
+    }
+  ],
+  "total": 0,
+  "page": 0,
+  "size": 0
+
+    }
+                    }
+               },
+              {"page":1,"size":50,"result":{"code":200,"res_body":{
+  "items": [
+    {
+      "id": 2147483647,
+      "title": "null",
+      "is_done": False,
+      "create_datetime": "2021-05-17T13:46:10.332Z",
+      "done_datetime": "2021-05-17T13:46:10.332Z"
+    }
+  ],
+  "total": 0,
+  "page": 0,
+  "size": 0
+
+    }
+                }},
+              {"page":"sfaf","size":"24rqwdf","result":{"code":422,"res_body":{
+  "detail": [
+    {
+      "loc": [
+        "string"
+      ],
+      "msg": "string",
+      "type": "string"
+    }
+  ]
+}}}
 
 
+
+
+
+
+
+    ]
+)
+def test_todo_list_data(user_session,params):
+    api_name = "任务列表"
+    res = user_session.request(
+        api_info[api_name].method,
+        f"{base_url}{api_info[api_name].url}",
+        params=params
+    )
+    assert res.status_code == params["result"]['code']
+    assert res.json().keys() == params["result"]['res_body'].keys()
