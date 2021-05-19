@@ -155,3 +155,35 @@ def test_todo_list_data(user_session,params):
     )
     assert res.status_code == params["result"]['code']
     assert res.json().keys() == params["result"]['res_body'].keys()
+
+  
+@pytest.mark.parametrize(
+    "data",[
+      {
+        "body":{},
+        "result":{"code":200,"title":"null"}
+      },
+      {"body":{"title":"senling","is_done":True},
+        "result":{"code":200,"title":"senling"}
+      },
+      {
+        "body":{"title":"senling"},
+        "result":{"code":200,"title":"senling"}
+      },
+      {
+        "body":{"is_done":False},
+        "result":{"code":200,"title":"null"}
+      }
+      ]
+)
+def test_todo_establish(user_session,data):
+  api_name = "创建任务"
+  res = user_session.request(
+      api_info[api_name].method,
+      f"{base_url}{api_info[api_name].url}",
+      json = data['body']
+  )
+
+  assert res.status_code == data["result"]['code']
+  assert res.json()['title'] == data['result']['title']
+  

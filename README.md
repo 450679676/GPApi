@@ -304,66 +304,77 @@ def test_todo_list(user_session):
 
 - ​			参数为空
 - ​           正向传参数
-- ​          传递错误的参数
+
+```python
+  
+@pytest.mark.parametrize(
+    "data",[
+      {
+        "body":{},
+        "result":{"code":200}
+      },
+      {"body":{"title":"senling","is_done":True},
+        "result":{"code":200}
+      },
+      {
+        "body":{"title":"senling"},
+        "result":{"code":200}
+      },
+      {
+        "body":{"is_done":False},
+        "result":{"code":200}
+      }
+      ]
+)
+def test_todo_establish(user_session,data):
+  api_name = "创建任务"
+  res = user_session.request(
+      api_info[api_name].method,
+      f"{base_url}{api_info[api_name].url}",
+      json = data['body']
+  )
+  assert res.status_code == data["result"]['code']
+```
+
+### 断言响应字段
+
+需要断言下 创建请求后返回的title 字段 和is_done是否一致
+
+查看接口文档
+
+![image-20210519215826885](img/image-20210519215826885.png)
+
+
 
 ```python
 @pytest.mark.parametrize(
-    'params',[{'result':{"code":200,"res_body":{
-  "items": [
-    {
-      "id": 2147483647,
-      "title": "null",
-      "is_done": False,
-      "create_datetime": "2021-05-17T13:46:10.332Z",
-      "done_datetime": "2021-05-17T13:46:10.332Z"
-    }
-  ],
-  "total": 0,
-  "page": 0,
-  "size": 0
-
-    }
-                    }
-               },
-              {"page":1,"size":50,"result":{"code":200,"res_body":{
-  "items": [
-    {
-      "id": 2147483647,
-      "title": "null",
-      "is_done": False,
-      "create_datetime": "2021-05-17T13:46:10.332Z",
-      "done_datetime": "2021-05-17T13:46:10.332Z"
-    }
-  ],
-  "total": 0,
-  "page": 0,
-  "size": 0
-
-    }
-                }},
-              {"page":"sfaf","size":"24rqwdf","result":{"code":422,"res_body":{
-  "detail": [
-    {
-      "loc": [
-        "string"
-      ],
-      "msg": "string",
-      "type": "string"
-    }
-  ]
-}}}
-
-
-    ]
+    "data",[
+      {
+        "body":{},
+        "result":{"code":200,"title":"null"}
+      },
+      {"body":{"title":"senling","is_done":True},
+        "result":{"code":200,"title":"senling"}
+      },
+      {
+        "body":{"title":"senling"},
+        "result":{"code":200,"title":"senling"}
+      },
+      {
+        "body":{"is_done":False},
+        "result":{"code":200,"title":"null"}
+      }
+      ]
 )
-def test_todo_list_data(user_session,params):
-    api_name = "任务列表"
-    res = user_session.request(
-        api_info[api_name].method,
-        f"{base_url}{api_info[api_name].url}",
-        params=params
-    )
-    assert res.status_code == params["result"]['code']
-    assert res.json().keys() == params["result"]['res_body'].keys()
+def test_todo_establish(user_session,data):
+  api_name = "创建任务"
+  res = user_session.request(
+      api_info[api_name].method,
+      f"{base_url}{api_info[api_name].url}",
+      json = data['body']
+  )
+
+  assert res.status_code == data["result"]['code']
+  assert res.json()['title'] == data['result']['title']
 ```
 
