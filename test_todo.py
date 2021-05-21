@@ -1,4 +1,5 @@
 from collections import namedtuple
+from re import A
 import time
 import pytest
 base_url = "https://api.tttt.one/rest-v2"
@@ -91,6 +92,7 @@ def test_todo_list(user_session):
 
     )
     assert res.status_code == api_info[api_name].code
+    assert get_jaon(res,'total') == 10 #预期结构写死成10
 
 @pytest.mark.parametrize(
     'params',[{'result':{"code":200,"res_body":{
@@ -103,7 +105,7 @@ def test_todo_list(user_session):
       "done_datetime": "2021-05-17T13:46:10.332Z"
     }
   ],
-  "total": 0,
+  "total": 10,
   "page": 0,
   "size": 0
 
@@ -120,7 +122,7 @@ def test_todo_list(user_session):
       "done_datetime": "2021-05-17T13:46:10.332Z"
     }
   ],
-  "total": 0,
+  "total": 10,
   "page": 0,
   "size": 0
 
@@ -136,14 +138,9 @@ def test_todo_list(user_session):
       "type": "string"
     }
   ]
-}}}
-
-
-
-
-
-
-
+}
+}
+}
     ]
 )
 def test_todo_list_data(user_session,params):
@@ -155,6 +152,9 @@ def test_todo_list_data(user_session,params):
     )
     assert res.status_code == params["result"]['code']
     assert res.json().keys() == params["result"]['res_body'].keys()
+   
+
+    
 
   
 @pytest.mark.parametrize(

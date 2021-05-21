@@ -378,3 +378,50 @@ def test_todo_establish(user_session,data):
   assert res.json()['title'] == data['result']['title']
 ```
 
+## 会变化的数据处理
+
+在测试过程过 会一直变化的数据的处理 
+
+### 原因
+
+比如:
+
+- ​			在todo列表中的数据**总条数**  在测试过程会一直变化  如果在断言中 把**条数写死** 会造成  **断言失败**
+
+![image-20210521123742867](img/image-20210521123742867.png)
+
+#### 用例
+
+```python
+def test_todo_list(user_session):
+    api_name = "任务列表"
+    res = user_session.request(
+        api_info[api_name].method,
+        f"{base_url}{api_info[api_name].url}",
+        params=api_info[api_name].params
+
+    )
+    assert res.status_code == api_info[api_name].code
+    assert get_jaon(res,'total') == 10 #预期结构写死成10
+```
+
+#### 实际断言结果
+
+在运行了几次新建用例 之后 再次运行这个用例
+
+实际结果是61 导致断言失败
+
+![image-20210521125554581](img/image-20210521125554581.png)
+
+### 处理方法 
+
+#### 思路
+
+给列表用例定义一个夹具 用夹具给数据进行前置条件的初始化
+**执行动作:** 
+
+-  先判断总条数 有没有10条 
+  - 如果有 就直接返回总条数
+  - 如果没有就新增数据 直到达到10条 然后返回 总条数  
+  - 最后将该夹具 给列表接口 之后   将总条数的返回结果传进断言中
+
