@@ -1,5 +1,5 @@
 from collections import namedtuple
-from re import A
+from re import A, M
 import time
 import pytest
 base_url = "https://api.tttt.one/rest-v2"
@@ -82,17 +82,41 @@ api_info = dict(
 
 )
 
-from acquireJSON import  *
-def test_todo_list(user_session):
+
+@pytest.mark.parametrize(
+     "data",[
+      {
+        "body":{},
+        "result":{"code":200,"total":10}
+      },
+      {"body":{"page":1,"size":50},
+        "result":{"code":200,"total":10}
+      },
+      {
+        "body":{"page":0,"size":100},
+        "result":{"code":200,"total":10}
+      },
+      {
+        "body":{"page":"sggss","size":"fesdfsd"},
+        "result":{"code":422,"msg":"value is not a valid integer"}
+      }
+      ]
+)
+def test_todo_list(user_session,data):
     api_name = "任务列表"
     res = user_session.request(
         api_info[api_name].method,
         f"{base_url}{api_info[api_name].url}",
-        params=api_info[api_name].params
+        params=data['body']
 
     )
-    assert res.status_code == api_info[api_name].code
-    assert get_jaon(res,'total') == 10 #预期结构写死成10
+    assert res.status_code == data['result']['code']
+    
+    if res.json().get('total')  is not None: 
+        assert res.json().get('total') == 10
+    else:
+        assert res.json()['detail'][0]['msg'] == data['result']['msg']                          
+    
 
 @pytest.mark.parametrize(
     'params',[{'result':{"code":200,"res_body":{
