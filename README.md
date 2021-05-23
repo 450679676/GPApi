@@ -1,3 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TOC]
+
+
+
 ## 熟悉项目
 
 项目名称： TodoList
@@ -378,11 +406,57 @@ def test_todo_establish(user_session,data):
   assert res.json()['title'] == data['result']['title']
 ```
 
+### 不同参数的返回值 用同一个assert断言 取值的处理方法
+
+正向参数和反向参数 的响应字段是不同的   同一个assert如何根据不同的参数 断言不同响应的key和value
+
+```python
+
+@pytest.mark.parametrize(
+     "data",[
+      {
+        "body":{},
+        "result":{"code":200,"total":10}
+      },
+      {"body":{"page":1,"size":50},
+        "result":{"code":200,"total":10}
+      },
+      {
+        "body":{"page":0,"size":100},
+        "result":{"code":200,"total":10}
+      },
+      {
+        "body":{"page":"sggss","size":"fesdfsd"},
+        "result":{"code":422,"msg":"value is not a valid integer"} #反向参数断言的响应字段
+      }
+      ]
+)
+def test_todo_list(user_session,data):
+    api_name = "任务列表"
+    res = user_session.request(
+        api_info[api_name].method,
+        f"{base_url}{api_info[api_name].url}",
+        params=data['body']
+
+    )
+    assert res.status_code == data['result']['code']
+    #如果获取的正向参数字段不为空 就断言  否则就获取反向参数的响应字段进行断言
+    if res.json().get('total')  is not None: 
+        assert res.json().get('total') == 10
+    else:
+        assert res.json()['detail'][0]['msg'] == data['result']['msg']                          
+    
+```
+
+
+
 ## 会变化的数据处理
 
-在测试过程过 会一直变化的数据的处理 
-
 ### 原因
+
+在测试过程过 会一直变化的数据的处理  如：每执行一次新增数据的接口 数据量就会变化 这时候 会对测试环境的数据造成影响
+
+如果用之前的数据进行请求断言  可能会报错
 
 比如:
 
@@ -390,7 +464,7 @@ def test_todo_establish(user_session,data):
 
 ![image-20210521123742867](img/image-20210521123742867.png)
 
-#### 用例
+#### 用例举例说明
 
 ```python
 def test_todo_list(user_session):
@@ -405,7 +479,7 @@ def test_todo_list(user_session):
     assert get_jaon(res,'total') == 10 #预期结构写死成10
 ```
 
-#### 实际断言结果
+#### 实际结果断言
 
 在运行了几次新建用例 之后 再次运行这个用例
 
@@ -415,13 +489,152 @@ def test_todo_list(user_session):
 
 ### 处理方法 
 
-#### 思路
+**思路**
 
-给列表用例定义一个夹具 用夹具给数据进行前置条件的初始化
+需要封装一个夹具 用来在测试该接口前 当前一个给数据做初始化的条件的方法 用来获取当前的数据量
 **执行动作:** 
 
 -  先判断总条数 有没有10条 
   - 如果有 就直接返回总条数
   - 如果没有就新增数据 直到达到10条 然后返回 总条数  
   - 最后将该夹具 给列表接口 之后   将总条数的返回结果传进断言中
+
+**前置处理夹具的方法** 
+
+```python
+@pytest.fixture()
+def user_todo_total(user_session):
+  min_total = 10#设置最小值
+  api_name = "任务列表"
+  res = user_session.request(api_info[api_name].method,f"{base_url}{api_info[api_name].url}")
+  assert res.status_code == api_info[api_name].code
+ #获取当前的数据 条数
+  total = get_jaon(res,'total')
+  
+  if total >= min_total:
+    """如果满足最小值 就直接返回 否则创建任务直到满足最小值 然后再返回"""
+    return total
+  else:
+     for i in range(min_total - total):
+        api_name = "创建任务"
+        res = user_session.request(
+          api_info[api_name].method,
+          f"{base_url}{api_info[api_name].url}",
+          json = {}
+          )
+        assert res.status_code == 200
+        
+     return min_total
+```
+
+其实也可以根据情况，
+
+
+
+**用例接口调用**
+
+```python
+
+@pytest.mark.parametrize(
+     "data",[
+      {
+        "body":{},
+        "result":{"code":200,"total":10}
+      },
+      {"body":{"page":1,"size":50},
+        "result":{"code":200,"total":10}
+      },
+      {
+        "body":{"page":0,"size":100},
+        "result":{"code":200,"total":10}
+      },
+      {
+        "body":{"page":"sggss","size":"fesdfsd"},
+        "result":{"code":422,"msg":"value is not a valid integer"}
+      }
+      ]
+)
+def test_todo_list(user_session,data,user_todo_total): #夹具调用使用
+    api_name = "任务列表"
+    res = user_session.request(
+        api_info[api_name].method,
+        f"{base_url}{api_info[api_name].url}",
+        params=data['body']
+
+    )
+    assert res.status_code == data['result']['code']
+    
+    if res.json().get('total')  is not None: 
+        assert res.json().get('total') == user_todo_total # 这里传递
+    else:
+        assert res.json()['detail'][0]['msg'] == data['result']['msg']  
+```
+
+
+
+## path路径参数
+
+**将参数拼接在url地址后面** 
+https://api.tttt.one/rest-v2/todo/10
+
+![image-20210523152337722](img/image-20210523152337722.png)
+
+### 测试用例设计思路
+
+**以任务详情为例** 
+
+首先获取任务详情 首先需要任务的todo_id ,而这个id是在列表接口返回的的 
+
+所以 需要在封装一个接口列表的夹具的 返回id给用例使用
+
+#### 封装夹具前置条件
+
+代码说明:
+
+- ​		请求列表接口 获取任务id  
+- ​        如果id 不为空 就直接返回
+- ​        否则 就新建任务 然后获取id 并返回
+
+```python
+@pytest.fixture()
+def New_todo(user_session):
+  api_name = "任务列表"
+
+  res = user_session.request(
+    api_info[api_name].method,
+    f"{base_url}{api_info[api_name].url}"
+  )
+  assert res.status_code == 200
+  id = get_jaon(res,'id')
+  if id is not None:
+
+    return id[0]
+  else:
+      api_name = "创建任务"
+      res = user_session.request(
+      api_info[api_name].method,
+      f"{base_url}{api_info[api_name].url}",
+      json = {}
+  )
+      assert res.status_code == 200
+      return get_jaon(res,'id')
+```
+
+#### 任务详情测试用例
+
+把夹具new_todo 获取到的id  传入 任务详情url路径上请求
+
+```python
+
+def test_get_todo(user_session,New_todo):
+    api_name = "任务详情"
+    res = user_session.request(
+      api_info[api_name].method,
+      # 等同于: https://api.tttt.one/rest-v2/todo{todo_id}.format(todo_id=1067)
+      f"{base_url}{api_info[api_name].url}".format(todo_id = New_todo)
+    )
+    assert res.status_code == 200
+```
+
+
 

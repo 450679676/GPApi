@@ -1,5 +1,12 @@
 from collections import namedtuple
-from re import A, M
+from functools import total_ordering
+from re import A
+import re
+
+from _pytest.config import main
+from _pytest.mark import param
+from attr import dataclass
+from acquireJSON import get_jaon
 import time
 import pytest
 base_url = "https://api.tttt.one/rest-v2"
@@ -49,8 +56,8 @@ api_info = dict(
     清空任务 = api_info_temp(
         method="DELETE",
         url="/todo",
-        body={"alli":all},
-        params={},
+        body={},
+        params={"all":all},
         code=204,
         res_body={
   "detail": [
@@ -82,6 +89,35 @@ api_info = dict(
 
 )
 
+@pytest.fixture()
+def user_todo_total(user_session):
+  min_total = 10#设置最小值
+  api_name = "任务列表"
+  res = user_session.request(api_info[api_name].method,f"{base_url}{api_info[api_name].url}")
+  assert res.status_code == api_info[api_name].code
+ #获取当前的数据 条数
+  total = get_jaon(res,'total')
+  
+  if total >= min_total:
+    """如果满足最小值 就直接返回 否则创建任务直到满足最小值 然后再返回"""
+    return total
+  else:
+     for i in range(min_total - total):
+        api_name = "创建任务"
+        res = user_session.request(
+          api_info[api_name].method,
+          f"{base_url}{api_info[api_name].url}",
+          json = {}
+          )
+        assert res.status_code == 200
+        
+     return min_total
+
+ 
+
+
+
+
 
 @pytest.mark.parametrize(
      "data",[
@@ -102,8 +138,9 @@ api_info = dict(
       }
       ]
 )
-def test_todo_list(user_session,data):
+def test_todo_list(user_session,data,user_todo_total):
     api_name = "任务列表"
+  
     res = user_session.request(
         api_info[api_name].method,
         f"{base_url}{api_info[api_name].url}",
@@ -113,7 +150,7 @@ def test_todo_list(user_session,data):
     assert res.status_code == data['result']['code']
     
     if res.json().get('total')  is not None: 
-        assert res.json().get('total') == 10
+        assert res.json().get('total') == user_todo_total
     else:
         assert res.json()['detail'][0]['msg'] == data['result']['msg']                          
     
@@ -211,3 +248,44 @@ def test_todo_establish(user_session,data):
   assert res.status_code == data["result"]['code']
   assert res.json()['title'] == data['result']['title']
   
+
+@pytest.fixture()
+def New_todo(user_session):
+  api_name = "任务列表"
+
+  res = user_session.request(
+    api_info[api_name].method,
+    f"{base_url}{api_info[api_name].url}"
+  )
+  assert res.status_code == 200
+  id = get_jaon(res,'id')
+  if id is not None:
+
+    return id[0]
+  else:
+      api_name = "创建任务"
+      res = user_session.request(
+      api_info[api_name].method,
+      f"{base_url}{api_info[api_name].url}",
+      json = {}
+  )
+      assert res.status_code == 200
+      return get_jaon(res,'id')
+
+
+@pytest.mark.parametrize(
+  "data",[
+    {
+        "body":{"id":New_todo},
+        "result":{"code":200}
+      },
+  ]
+)
+def test_get_todo(user_session,data):
+    api_name = "任务详情"
+    res = user_session.request(
+      api_info[api_name].method,
+      #   https://api.tttt.one/rest-v2/todo{todo_id}.format(todo_id=1067)
+      f"{base_url}{api_info[api_name].url}".format(todo_id = data['body']['id'])
+    )
+    assert res.status_code == data['result']['code']
