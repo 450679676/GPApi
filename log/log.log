@@ -7268,3 +7268,1392 @@
  "create_datetime": "2021-05-19T14:52:15.125469+00:00",
  "done_datetime": "2021-05-19T14:52:15.125545+00:00"
 }
+2021-05-20 21:46:32,892: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-20 21:46:32,895: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-20 21:46:32,895: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-20 21:46:32,895: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-20 21:46:35,194: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-20 21:46:35,213: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:35,214: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:33 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba0341c00000d18ad391000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=W72pMd5sZL%2B8VwTuVl7xIIbnhlqHCz1X%2BShhkafDexboKVoaKiW6K8JxFQubqTNm0ABw0b2QNFf0FApLC9BJFOn3ZG37ZPeAPTuKxk8%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '652603002d220d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:35,215: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ",
+ "token_type": "bearer"
+}
+2021-05-20 21:46:35,221: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=0&zise=50
+2021-05-20 21:46:35,221: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ'}
+2021-05-20 21:46:35,222: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-20 21:46:35,816: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=0&zise=50 HTTP/1.1" 200 None
+2021-05-20 21:46:35,817: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:35,818: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:33 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba037f800000d18d5081000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=LvRksBorVO%2FV8zhqBn1SO2%2FHR9ydnYZwTYq3vEVSXclHL%2BtBKPdGoWgUpdEPrjheTaWPC3exYChCBclqndIjqovPxXx6AOXFr2xTOBM%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '652603065e430d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:35,820: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [
+  {
+   "id": 1053,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T07:42:34.280774+00:00",
+   "done_datetime": "2021-05-20T07:42:34.280871+00:00"
+  },
+  {
+   "id": 1052,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-20T07:42:33.615162+00:00",
+   "done_datetime": "2021-05-20T07:42:33.615202+00:00"
+  },
+  {
+   "id": 1051,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-20T07:42:33.335141+00:00",
+   "done_datetime": "2021-05-20T07:42:33.335189+00:00"
+  },
+  {
+   "id": 1050,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T07:42:32.698504+00:00",
+   "done_datetime": "2021-05-20T07:42:32.698577+00:00"
+  },
+  {
+   "id": 1049,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:39:56.754965+00:00",
+   "done_datetime": "2021-05-20T04:39:56.755043+00:00"
+  },
+  {
+   "id": 1048,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:39:56.069449+00:00",
+   "done_datetime": "2021-05-20T04:39:56.069513+00:00"
+  },
+  {
+   "id": 1047,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-20T04:39:55.773372+00:00",
+   "done_datetime": "2021-05-20T04:39:55.773437+00:00"
+  },
+  {
+   "id": 1046,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:39:55.086937+00:00",
+   "done_datetime": "2021-05-20T04:39:55.087019+00:00"
+  },
+  {
+   "id": 1045,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:38:16.314826+00:00",
+   "done_datetime": "2021-05-20T04:38:16.314908+00:00"
+  },
+  {
+   "id": 1044,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:38:15.992765+00:00",
+   "done_datetime": "2021-05-20T04:38:15.992805+00:00"
+  },
+  {
+   "id": 1043,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-20T04:38:15.706530+00:00",
+   "done_datetime": "2021-05-20T04:38:15.706595+00:00"
+  },
+  {
+   "id": 1042,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:38:15.051661+00:00",
+   "done_datetime": "2021-05-20T04:38:15.051718+00:00"
+  },
+  {
+   "id": 1041,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:52:15.125469+00:00",
+   "done_datetime": "2021-05-19T14:52:15.125545+00:00"
+  },
+  {
+   "id": 1040,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:52:13.728557+00:00",
+   "done_datetime": "2021-05-19T14:52:13.728652+00:00"
+  },
+  {
+   "id": 1039,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:52:13.371013+00:00",
+   "done_datetime": "2021-05-19T14:52:13.371080+00:00"
+  },
+  {
+   "id": 1038,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:52:12.919128+00:00",
+   "done_datetime": "2021-05-19T14:52:12.919169+00:00"
+  },
+  {
+   "id": 1037,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:51:06.589691+00:00",
+   "done_datetime": "2021-05-19T14:51:06.589765+00:00"
+  },
+  {
+   "id": 1036,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:51:06.271051+00:00",
+   "done_datetime": "2021-05-19T14:51:06.271124+00:00"
+  },
+  {
+   "id": 1035,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:51:05.793304+00:00",
+   "done_datetime": "2021-05-19T14:51:05.793357+00:00"
+  },
+  {
+   "id": 1034,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:51:05.185765+00:00",
+   "done_datetime": "2021-05-19T14:51:05.186805+00:00"
+  },
+  {
+   "id": 1033,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:50:31.241691+00:00",
+   "done_datetime": "2021-05-19T14:50:31.241755+00:00"
+  },
+  {
+   "id": 1032,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:50:30.777720+00:00",
+   "done_datetime": "2021-05-19T14:50:30.777762+00:00"
+  },
+  {
+   "id": 1031,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:50:30.347558+00:00",
+   "done_datetime": "2021-05-19T14:50:30.347599+00:00"
+  },
+  {
+   "id": 1030,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:50:29.732887+00:00",
+   "done_datetime": "2021-05-19T14:50:29.732959+00:00"
+  },
+  {
+   "id": 1029,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:46:16.950799+00:00",
+   "done_datetime": "2021-05-19T14:46:16.950905+00:00"
+  },
+  {
+   "id": 1028,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:46:16.482494+00:00",
+   "done_datetime": "2021-05-19T14:46:16.482534+00:00"
+  },
+  {
+   "id": 1027,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:46:16.038952+00:00",
+   "done_datetime": "2021-05-19T14:46:16.039032+00:00"
+  },
+  {
+   "id": 1026,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:46:15.546197+00:00",
+   "done_datetime": "2021-05-19T14:46:15.546354+00:00"
+  },
+  {
+   "id": 1025,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:42:50.134346+00:00",
+   "done_datetime": "2021-05-19T14:42:50.134390+00:00"
+  },
+  {
+   "id": 1024,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:42:49.658119+00:00",
+   "done_datetime": "2021-05-19T14:42:49.658189+00:00"
+  },
+  {
+   "id": 1023,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:42:49.155432+00:00",
+   "done_datetime": "2021-05-19T14:42:49.155482+00:00"
+  },
+  {
+   "id": 1022,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:42:47.448270+00:00",
+   "done_datetime": "2021-05-19T14:42:47.448345+00:00"
+  },
+  {
+   "id": 1021,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:11:06.644101+00:00",
+   "done_datetime": "2021-05-19T14:11:06.644171+00:00"
+  },
+  {
+   "id": 1020,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:11:06.287558+00:00",
+   "done_datetime": "2021-05-19T14:11:06.287632+00:00"
+  },
+  {
+   "id": 1019,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:11:05.628109+00:00",
+   "done_datetime": "2021-05-19T14:11:05.628174+00:00"
+  },
+  {
+   "id": 1018,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:11:05.157042+00:00",
+   "done_datetime": "2021-05-19T14:11:05.157115+00:00"
+  },
+  {
+   "id": 1017,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:05:25.522505+00:00",
+   "done_datetime": "2021-05-19T14:05:25.522568+00:00"
+  },
+  {
+   "id": 1016,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:05:25.062307+00:00",
+   "done_datetime": "2021-05-19T14:05:25.062389+00:00"
+  },
+  {
+   "id": 1015,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:05:24.736575+00:00",
+   "done_datetime": "2021-05-19T14:05:24.736642+00:00"
+  },
+  {
+   "id": 1014,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:05:24.262657+00:00",
+   "done_datetime": "2021-05-19T14:05:24.262731+00:00"
+  },
+  {
+   "id": 1013,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:03:07.723744+00:00",
+   "done_datetime": "2021-05-19T14:03:07.723814+00:00"
+  },
+  {
+   "id": 1012,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:03:07.352248+00:00",
+   "done_datetime": "2021-05-19T14:03:07.352311+00:00"
+  },
+  {
+   "id": 1011,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:03:06.991588+00:00",
+   "done_datetime": "2021-05-19T14:03:06.991666+00:00"
+  },
+  {
+   "id": 1010,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:03:06.495714+00:00",
+   "done_datetime": "2021-05-19T14:03:06.495764+00:00"
+  },
+  {
+   "id": 1009,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:02:03.849867+00:00",
+   "done_datetime": "2021-05-19T14:02:03.849983+00:00"
+  },
+  {
+   "id": 1008,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:02:02.905335+00:00",
+   "done_datetime": "2021-05-19T14:02:02.905398+00:00"
+  },
+  {
+   "id": 1007,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:02:02.298391+00:00",
+   "done_datetime": "2021-05-19T14:02:02.298465+00:00"
+  },
+  {
+   "id": 1006,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:02:01.070994+00:00",
+   "done_datetime": "2021-05-19T14:02:01.071037+00:00"
+  },
+  {
+   "id": 1005,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:46:26.058985+00:00",
+   "done_datetime": "2021-05-19T13:46:26.059726+00:00"
+  },
+  {
+   "id": 1004,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:46:25.712113+00:00",
+   "done_datetime": "2021-05-19T13:46:25.712170+00:00"
+  }
+ ],
+ "total": 57,
+ "page": 0,
+ "size": 50
+}
+2021-05-20 21:46:35,829: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?result=code&result=res_body
+2021-05-20 21:46:35,830: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ'}
+2021-05-20 21:46:35,830: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-20 21:46:36,402: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?result=code&result=res_body HTTP/1.1" 200 None
+2021-05-20 21:46:36,404: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:36,405: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:34 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba03a5700000d18960dd000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=IdtRNcmZuUv%2BdlByqkIur8fSAp%2FcL%2BNj%2B2WDwUnRrZwTlkEoqxHolY9p0Ner8pDzSDri1EkpKdwSosoyEQFjA9co%2FbrIPoyLA0iFzjA%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6526030a29050d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:36,407: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [
+  {
+   "id": 1053,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T07:42:34.280774+00:00",
+   "done_datetime": "2021-05-20T07:42:34.280871+00:00"
+  },
+  {
+   "id": 1052,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-20T07:42:33.615162+00:00",
+   "done_datetime": "2021-05-20T07:42:33.615202+00:00"
+  },
+  {
+   "id": 1051,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-20T07:42:33.335141+00:00",
+   "done_datetime": "2021-05-20T07:42:33.335189+00:00"
+  },
+  {
+   "id": 1050,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T07:42:32.698504+00:00",
+   "done_datetime": "2021-05-20T07:42:32.698577+00:00"
+  },
+  {
+   "id": 1049,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:39:56.754965+00:00",
+   "done_datetime": "2021-05-20T04:39:56.755043+00:00"
+  },
+  {
+   "id": 1048,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:39:56.069449+00:00",
+   "done_datetime": "2021-05-20T04:39:56.069513+00:00"
+  },
+  {
+   "id": 1047,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-20T04:39:55.773372+00:00",
+   "done_datetime": "2021-05-20T04:39:55.773437+00:00"
+  },
+  {
+   "id": 1046,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:39:55.086937+00:00",
+   "done_datetime": "2021-05-20T04:39:55.087019+00:00"
+  },
+  {
+   "id": 1045,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:38:16.314826+00:00",
+   "done_datetime": "2021-05-20T04:38:16.314908+00:00"
+  },
+  {
+   "id": 1044,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:38:15.992765+00:00",
+   "done_datetime": "2021-05-20T04:38:15.992805+00:00"
+  },
+  {
+   "id": 1043,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-20T04:38:15.706530+00:00",
+   "done_datetime": "2021-05-20T04:38:15.706595+00:00"
+  },
+  {
+   "id": 1042,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-20T04:38:15.051661+00:00",
+   "done_datetime": "2021-05-20T04:38:15.051718+00:00"
+  },
+  {
+   "id": 1041,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:52:15.125469+00:00",
+   "done_datetime": "2021-05-19T14:52:15.125545+00:00"
+  },
+  {
+   "id": 1040,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:52:13.728557+00:00",
+   "done_datetime": "2021-05-19T14:52:13.728652+00:00"
+  },
+  {
+   "id": 1039,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:52:13.371013+00:00",
+   "done_datetime": "2021-05-19T14:52:13.371080+00:00"
+  },
+  {
+   "id": 1038,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:52:12.919128+00:00",
+   "done_datetime": "2021-05-19T14:52:12.919169+00:00"
+  },
+  {
+   "id": 1037,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:51:06.589691+00:00",
+   "done_datetime": "2021-05-19T14:51:06.589765+00:00"
+  },
+  {
+   "id": 1036,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:51:06.271051+00:00",
+   "done_datetime": "2021-05-19T14:51:06.271124+00:00"
+  },
+  {
+   "id": 1035,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:51:05.793304+00:00",
+   "done_datetime": "2021-05-19T14:51:05.793357+00:00"
+  },
+  {
+   "id": 1034,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:51:05.185765+00:00",
+   "done_datetime": "2021-05-19T14:51:05.186805+00:00"
+  },
+  {
+   "id": 1033,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:50:31.241691+00:00",
+   "done_datetime": "2021-05-19T14:50:31.241755+00:00"
+  },
+  {
+   "id": 1032,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:50:30.777720+00:00",
+   "done_datetime": "2021-05-19T14:50:30.777762+00:00"
+  },
+  {
+   "id": 1031,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:50:30.347558+00:00",
+   "done_datetime": "2021-05-19T14:50:30.347599+00:00"
+  },
+  {
+   "id": 1030,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:50:29.732887+00:00",
+   "done_datetime": "2021-05-19T14:50:29.732959+00:00"
+  },
+  {
+   "id": 1029,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:46:16.950799+00:00",
+   "done_datetime": "2021-05-19T14:46:16.950905+00:00"
+  },
+  {
+   "id": 1028,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:46:16.482494+00:00",
+   "done_datetime": "2021-05-19T14:46:16.482534+00:00"
+  },
+  {
+   "id": 1027,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:46:16.038952+00:00",
+   "done_datetime": "2021-05-19T14:46:16.039032+00:00"
+  },
+  {
+   "id": 1026,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:46:15.546197+00:00",
+   "done_datetime": "2021-05-19T14:46:15.546354+00:00"
+  },
+  {
+   "id": 1025,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:42:50.134346+00:00",
+   "done_datetime": "2021-05-19T14:42:50.134390+00:00"
+  },
+  {
+   "id": 1024,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:42:49.658119+00:00",
+   "done_datetime": "2021-05-19T14:42:49.658189+00:00"
+  },
+  {
+   "id": 1023,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:42:49.155432+00:00",
+   "done_datetime": "2021-05-19T14:42:49.155482+00:00"
+  },
+  {
+   "id": 1022,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:42:47.448270+00:00",
+   "done_datetime": "2021-05-19T14:42:47.448345+00:00"
+  },
+  {
+   "id": 1021,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:11:06.644101+00:00",
+   "done_datetime": "2021-05-19T14:11:06.644171+00:00"
+  },
+  {
+   "id": 1020,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:11:06.287558+00:00",
+   "done_datetime": "2021-05-19T14:11:06.287632+00:00"
+  },
+  {
+   "id": 1019,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:11:05.628109+00:00",
+   "done_datetime": "2021-05-19T14:11:05.628174+00:00"
+  },
+  {
+   "id": 1018,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:11:05.157042+00:00",
+   "done_datetime": "2021-05-19T14:11:05.157115+00:00"
+  },
+  {
+   "id": 1017,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:05:25.522505+00:00",
+   "done_datetime": "2021-05-19T14:05:25.522568+00:00"
+  },
+  {
+   "id": 1016,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:05:25.062307+00:00",
+   "done_datetime": "2021-05-19T14:05:25.062389+00:00"
+  },
+  {
+   "id": 1015,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:05:24.736575+00:00",
+   "done_datetime": "2021-05-19T14:05:24.736642+00:00"
+  },
+  {
+   "id": 1014,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:05:24.262657+00:00",
+   "done_datetime": "2021-05-19T14:05:24.262731+00:00"
+  },
+  {
+   "id": 1013,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:03:07.723744+00:00",
+   "done_datetime": "2021-05-19T14:03:07.723814+00:00"
+  },
+  {
+   "id": 1012,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:03:07.352248+00:00",
+   "done_datetime": "2021-05-19T14:03:07.352311+00:00"
+  },
+  {
+   "id": 1011,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:03:06.991588+00:00",
+   "done_datetime": "2021-05-19T14:03:06.991666+00:00"
+  },
+  {
+   "id": 1010,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:03:06.495714+00:00",
+   "done_datetime": "2021-05-19T14:03:06.495764+00:00"
+  },
+  {
+   "id": 1009,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:02:03.849867+00:00",
+   "done_datetime": "2021-05-19T14:02:03.849983+00:00"
+  },
+  {
+   "id": 1008,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:02:02.905335+00:00",
+   "done_datetime": "2021-05-19T14:02:02.905398+00:00"
+  },
+  {
+   "id": 1007,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T14:02:02.298391+00:00",
+   "done_datetime": "2021-05-19T14:02:02.298465+00:00"
+  },
+  {
+   "id": 1006,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T14:02:01.070994+00:00",
+   "done_datetime": "2021-05-19T14:02:01.071037+00:00"
+  },
+  {
+   "id": 1005,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:46:26.058985+00:00",
+   "done_datetime": "2021-05-19T13:46:26.059726+00:00"
+  },
+  {
+   "id": 1004,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:46:25.712113+00:00",
+   "done_datetime": "2021-05-19T13:46:25.712170+00:00"
+  }
+ ],
+ "total": 57,
+ "page": 0,
+ "size": 50
+}
+2021-05-20 21:46:36,416: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=1&size=50&result=code&result=res_body
+2021-05-20 21:46:36,416: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ'}
+2021-05-20 21:46:36,416: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-20 21:46:37,224: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=1&size=50&result=code&result=res_body HTTP/1.1" 200 None
+2021-05-20 21:46:37,225: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:37,226: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba03cc000000d18ff8e8000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=icVIMopSUccFqQudNt8F8Ju4W40RNCp5di9uP0jThEEIEQEbLt2hnJ%2BtxnGq5i80mSNmVpWyIx50dZdAWwgFszV5KJaXqSJ3mZVB4%2F4%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6526030dfbda0d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:37,226: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [
+  {
+   "id": 1003,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-19T13:46:25.364702+00:00",
+   "done_datetime": "2021-05-19T13:46:25.364812+00:00"
+  },
+  {
+   "id": 1002,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:46:25.003348+00:00",
+   "done_datetime": "2021-05-19T13:46:25.003390+00:00"
+  },
+  {
+   "id": 1001,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:43:38.682360+00:00",
+   "done_datetime": "2021-05-19T13:43:38.682402+00:00"
+  },
+  {
+   "id": 1000,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:43:37.486592+00:00",
+   "done_datetime": "2021-05-19T13:43:37.486652+00:00"
+  },
+  {
+   "id": 999,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:40:51.196030+00:00",
+   "done_datetime": "2021-05-19T13:40:51.196088+00:00"
+  },
+  {
+   "id": 998,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-19T13:27:26.529079+00:00",
+   "done_datetime": "2021-05-19T13:27:26.529152+00:00"
+  },
+  {
+   "id": 987,
+   "title": "fwsfg",
+   "is_done": false,
+   "create_datetime": "2021-05-13T12:47:57.429167+00:00",
+   "done_datetime": "2021-05-13T12:47:57.429212+00:00"
+  }
+ ],
+ "total": 57,
+ "page": 1,
+ "size": 50
+}
+2021-05-20 21:46:37,235: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=sfaf&size=24rqwdf&result=code&result=res_body
+2021-05-20 21:46:37,236: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ'}
+2021-05-20 21:46:37,236: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-20 21:46:37,572: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=sfaf&size=24rqwdf&result=code&result=res_body HTTP/1.1" 422 192
+2021-05-20 21:46:37,574: INFO: 29 接收响应>>>> 状态码= 422
+2021-05-20 21:46:37,574: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '192', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba03fd400000d18c617c000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=8I7rrYR%2F4KjMYztSPSFXcDedc%2FxT9c7UTNi2Sq9915fgHKqVTGmMVfJdSs2L1%2FuII7O%2BTixHeKrTw%2FfZxYTeJhPVrg0qZZU45rxilHE%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '65260312e8440d18-LAX', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:37,575: DEBUG: 31 接收响应>>>> 响应正文= {
+ "detail": [
+  {
+   "loc": [
+    "query",
+    "page"
+   ],
+   "msg": "value is not a valid integer",
+   "type": "type_error.integer"
+  },
+  {
+   "loc": [
+    "query",
+    "size"
+   ],
+   "msg": "value is not a valid integer",
+   "type": "type_error.integer"
+  }
+ ]
+}
+2021-05-20 21:46:37,583: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-20 21:46:37,583: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ', 'Content-Length': '2', 'Content-Type': 'application/json'}
+2021-05-20 21:46:37,584: DEBUG: 25 发生请求>>>> 请求正文= b'{}'
+2021-05-20 21:46:37,934: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-20 21:46:37,936: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:37,936: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba0413000000d188e315000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=NB46KUkS4%2F6Ew43L5J2Ji%2BJKggFrlCMb5OOI5ZCMk6IA5rO8lK%2FDpmlWQzcPWc%2B2zbls%2FBHI9Ff2TYFxKlPbb%2BpMzpGZILthQ6P%2BrDU%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '652603151f130d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:37,937: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1054,
+ "title": "null",
+ "is_done": false,
+ "create_datetime": "2021-05-20T13:46:35.754587+00:00",
+ "done_datetime": "2021-05-20T13:46:35.754654+00:00"
+}
+2021-05-20 21:46:37,949: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-20 21:46:37,950: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ', 'Content-Length': '37', 'Content-Type': 'application/json'}
+2021-05-20 21:46:37,950: DEBUG: 25 发生请求>>>> 请求正文= b'{"title": "senling", "is_done": true}'
+2021-05-20 21:46:38,454: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-20 21:46:38,455: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:38,455: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba0429f00000d18d4282000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=ZbOO94IeGXDAEX1HF72YwZT0OKk5ZulnfRiLJ4ddppYHcN6Y2wnP2fUV6MVlXSLHa5L0DZSaOg%2BK6Xt4%2FeCmIWmDTFsJZXMEF6LjWpo%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '652603176d330d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:38,456: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1055,
+ "title": "senling",
+ "is_done": true,
+ "create_datetime": "2021-05-20T13:46:36.279223+00:00",
+ "done_datetime": "2021-05-20T13:46:36.279264+00:00"
+}
+2021-05-20 21:46:38,461: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-20 21:46:38,461: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ', 'Content-Length': '20', 'Content-Type': 'application/json'}
+2021-05-20 21:46:38,461: DEBUG: 25 发生请求>>>> 请求正文= b'{"title": "senling"}'
+2021-05-20 21:46:38,807: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-20 21:46:38,808: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:38,809: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba044a300000d18ad153000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=ePDy6xaEeuthcT6N0v3TDnaivSB%2FIr5U8LSmaNXLkIduA1U8ArdNVqItqrx8Q9LtPzHaTqooFE6gID4EHqWfBXA6v3NvmcZquPQyYTU%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6526031a9dfb0d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:38,809: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1056,
+ "title": "senling",
+ "is_done": false,
+ "create_datetime": "2021-05-20T13:46:36.631766+00:00",
+ "done_datetime": "2021-05-20T13:46:36.631846+00:00"
+}
+2021-05-20 21:46:38,819: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-20 21:46:38,820: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjIyMDk1OTMsInN1YiI6IjQ3NyJ9.z8c4nfByCfC_Mpa9DUoVql2Dm7VP0W6mnbnekGulaVQ', 'Content-Length': '18', 'Content-Type': 'application/json'}
+2021-05-20 21:46:38,820: DEBUG: 25 发生请求>>>> 请求正文= b'{"is_done": false}'
+2021-05-20 21:46:39,339: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-20 21:46:39,340: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-20 21:46:39,340: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Thu, 20 May 2021 13:46:37 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a2ba0460400000d18ceb34000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=rFX9RzR%2Fb5Ac%2Bbw2xUftpeE9r0B9n16C4WHp7BrNvQgQ31s53ZBv60arPuQqkKR0A63ulLIKGYIkKtwxc2pA209ZqtnduDgxbtFih%2FY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6526031cdc030d18-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-20 21:46:39,341: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1057,
+ "title": "null",
+ "is_done": false,
+ "create_datetime": "2021-05-20T13:46:37.167188+00:00",
+ "done_datetime": "2021-05-20T13:46:37.167225+00:00"
+}
+2021-05-23 22:58:40,645: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-23 22:58:40,647: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-23 22:58:40,647: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-23 22:58:40,648: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-23 22:58:45,987: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-23 22:58:46,008: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:46,008: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:45 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b55650f0000362a31815000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=d9ULkAhl9Pe41BHX2tmkDWfsXsHnhSMkH%2B6Hp9IzGJXXcIfRI0jQIufrUKivGG8nucZYudjX9tipsy2noPfxr4AS5een3UQC%2BvgzPMY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24e81c98362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:46,008: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA",
+ "token_type": "bearer"
+}
+2021-05-23 22:58:46,008: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=0&zise=50
+2021-05-23 22:58:46,008: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA'}
+2021-05-23 22:58:46,008: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-23 22:58:46,543: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=0&zise=50 HTTP/1.1" 200 None
+2021-05-23 22:58:46,543: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:46,543: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:46 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b5568880000362a67011000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=OF7nCSr%2BS0FekAIkfIOOTFf8STIl02qzU9PoJIV0hWOMjHqTdGbbmPg4DBaWy3U6raLNooHIS8X0PLZzpb702IBtUvbk8eTHq0sURIo%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24edac88362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:46,543: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [
+  {
+   "id": 1068,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T09:30:02.474862+00:00",
+   "done_datetime": "2021-05-23T09:30:02.474942+00:00"
+  },
+  {
+   "id": 1067,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:34.670188+00:00",
+   "done_datetime": "2021-05-23T05:29:34.670228+00:00"
+  },
+  {
+   "id": 1066,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:34.171019+00:00",
+   "done_datetime": "2021-05-23T05:29:34.171067+00:00"
+  },
+  {
+   "id": 1065,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:33.675362+00:00",
+   "done_datetime": "2021-05-23T05:29:33.675420+00:00"
+  },
+  {
+   "id": 1064,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:33.151416+00:00",
+   "done_datetime": "2021-05-23T05:29:33.151486+00:00"
+  },
+  {
+   "id": 1063,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.846947+00:00",
+   "done_datetime": "2021-05-23T05:29:32.847002+00:00"
+  },
+  {
+   "id": 1062,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.538694+00:00",
+   "done_datetime": "2021-05-23T05:29:32.538741+00:00"
+  },
+  {
+   "id": 1061,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.033561+00:00",
+   "done_datetime": "2021-05-23T05:29:32.033601+00:00"
+  },
+  {
+   "id": 1060,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:31.727943+00:00",
+   "done_datetime": "2021-05-23T05:29:31.727980+00:00"
+  },
+  {
+   "id": 1059,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:31.236291+00:00",
+   "done_datetime": "2021-05-23T05:29:31.236374+00:00"
+  },
+  {
+   "id": 1058,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:30.739676+00:00",
+   "done_datetime": "2021-05-23T05:29:30.739747+00:00"
+  }
+ ],
+ "total": 11,
+ "page": 0,
+ "size": 50
+}
+2021-05-23 22:58:46,558: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?result=code&result=res_body
+2021-05-23 22:58:46,558: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA'}
+2021-05-23 22:58:46,558: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-23 22:58:47,077: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?result=code&result=res_body HTTP/1.1" 200 None
+2021-05-23 22:58:47,092: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:47,092: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:46 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b556ab30000362a639d6000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=Bs3rN6Ziz25ElQ6SxFL%2B8Dkbw7iZ%2Ba8H6gP65zctyTyCGrkuEQF00gPfjDcv01DsC%2FSvm0tnOLMAYCIG8LJrhZxN23%2Bu4DZR9ShWt98%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24f11d1e362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:47,092: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [
+  {
+   "id": 1068,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T09:30:02.474862+00:00",
+   "done_datetime": "2021-05-23T09:30:02.474942+00:00"
+  },
+  {
+   "id": 1067,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:34.670188+00:00",
+   "done_datetime": "2021-05-23T05:29:34.670228+00:00"
+  },
+  {
+   "id": 1066,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:34.171019+00:00",
+   "done_datetime": "2021-05-23T05:29:34.171067+00:00"
+  },
+  {
+   "id": 1065,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:33.675362+00:00",
+   "done_datetime": "2021-05-23T05:29:33.675420+00:00"
+  },
+  {
+   "id": 1064,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:33.151416+00:00",
+   "done_datetime": "2021-05-23T05:29:33.151486+00:00"
+  },
+  {
+   "id": 1063,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.846947+00:00",
+   "done_datetime": "2021-05-23T05:29:32.847002+00:00"
+  },
+  {
+   "id": 1062,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.538694+00:00",
+   "done_datetime": "2021-05-23T05:29:32.538741+00:00"
+  },
+  {
+   "id": 1061,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.033561+00:00",
+   "done_datetime": "2021-05-23T05:29:32.033601+00:00"
+  },
+  {
+   "id": 1060,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:31.727943+00:00",
+   "done_datetime": "2021-05-23T05:29:31.727980+00:00"
+  },
+  {
+   "id": 1059,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:31.236291+00:00",
+   "done_datetime": "2021-05-23T05:29:31.236374+00:00"
+  },
+  {
+   "id": 1058,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:30.739676+00:00",
+   "done_datetime": "2021-05-23T05:29:30.739747+00:00"
+  }
+ ],
+ "total": 11,
+ "page": 0,
+ "size": 50
+}
+2021-05-23 22:58:47,092: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=1&size=50&result=code&result=res_body
+2021-05-23 22:58:47,092: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA'}
+2021-05-23 22:58:47,092: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-23 22:58:47,594: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=1&size=50&result=code&result=res_body HTTP/1.1" 200 42
+2021-05-23 22:58:47,594: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:47,594: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:47 GMT', 'Content-Type': 'application/json', 'Content-Length': '42', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b556cc80000362a0a3b1000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=v7UjEfH0L6oIXTQKLTYmcwCFws%2FzIOgOA7BJ%2BppU0cJQHk1WGojS0oSlRkrNeWfh7MgD1rMxjgYGUpifUAQhIFLYTGy9JGUZSU40vIQ%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24f47e80362a-LAX', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:47,594: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [],
+ "total": 11,
+ "page": 1,
+ "size": 50
+}
+2021-05-23 22:58:47,594: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=sfaf&size=24rqwdf&result=code&result=res_body
+2021-05-23 22:58:47,594: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA'}
+2021-05-23 22:58:47,594: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-23 22:58:48,064: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=sfaf&size=24rqwdf&result=code&result=res_body HTTP/1.1" 422 192
+2021-05-23 22:58:48,064: INFO: 29 接收响应>>>> 状态码= 422
+2021-05-23 22:58:48,064: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:47 GMT', 'Content-Type': 'application/json', 'Content-Length': '192', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b556ebf0000362afa2e4000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=BWCNVUrgMupEv8JEM0KB738%2F2kWO1h%2BWVP1fjoE394IWHnuQ3pcozc7M1YJ5ZeUxuXtb4qkayESuR4%2FRiHfgpEmLmqq7lbVam7uipes%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24f79f20362a-LAX', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:48,064: DEBUG: 31 接收响应>>>> 响应正文= {
+ "detail": [
+  {
+   "loc": [
+    "query",
+    "page"
+   ],
+   "msg": "value is not a valid integer",
+   "type": "type_error.integer"
+  },
+  {
+   "loc": [
+    "query",
+    "size"
+   ],
+   "msg": "value is not a valid integer",
+   "type": "type_error.integer"
+  }
+ ]
+}
+2021-05-23 22:58:48,079: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-23 22:58:48,079: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA', 'Content-Length': '2', 'Content-Type': 'application/json'}
+2021-05-23 22:58:48,079: DEBUG: 25 发生请求>>>> 请求正文= b'{}'
+2021-05-23 22:58:48,381: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-23 22:58:48,381: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:48,381: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:48 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b5570a10000362a2230b000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=OwBrBldEd90yjZGDJl7th3dupQ1mOI9SGntHUiOy%2FaLYg%2F8dQ3Ef1KkCZQFmKBKsoe3vwx0FZBNl6pGPyxQXidKlI10AgwUy98yfsz4%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24fa986e362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:48,381: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1069,
+ "title": "null",
+ "is_done": false,
+ "create_datetime": "2021-05-23T14:58:48.148191+00:00",
+ "done_datetime": "2021-05-23T14:58:48.148243+00:00"
+}
+2021-05-23 22:58:48,404: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-23 22:58:48,405: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA', 'Content-Length': '37', 'Content-Type': 'application/json'}
+2021-05-23 22:58:48,406: DEBUG: 25 发生请求>>>> 请求正文= b'{"title": "senling", "is_done": true}'
+2021-05-23 22:58:48,882: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-23 22:58:48,882: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:48,882: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:48 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b5571dd0000362a1902a000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=orsMIrMvh6%2BpB5GqEybPbj8DFn2N1nNnLsxyK1524i1aFDLNffOAdw5edL19M0Hh0R7%2BDByyp1i1FIqLfChwHIoDdsYIlSaZjIWpJvY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24fc9ddd362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:48,882: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1070,
+ "title": "senling",
+ "is_done": true,
+ "create_datetime": "2021-05-23T14:58:48.641982+00:00",
+ "done_datetime": "2021-05-23T14:58:48.642041+00:00"
+}
+2021-05-23 22:58:48,897: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-23 22:58:48,897: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA', 'Content-Length': '20', 'Content-Type': 'application/json'}
+2021-05-23 22:58:48,897: DEBUG: 25 发生请求>>>> 请求正文= b'{"title": "senling"}'
+2021-05-23 22:58:49,399: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-23 22:58:49,399: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:49,399: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:49 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b5573ce0000362a4928c000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=LH4U3v2twXnfdsauKlgWL01iBu69idWs6tnSBQEuCGNQ5lOC4GQ753Z7clUPVUvR9L5k%2BzT3Q7IUTVOrLX%2BFo9DyYKhTC5t0g4f0etU%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f24ffad6b362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:49,399: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1071,
+ "title": "senling",
+ "is_done": false,
+ "create_datetime": "2021-05-23T14:58:49.148636+00:00",
+ "done_datetime": "2021-05-23T14:58:49.148677+00:00"
+}
+2021-05-23 22:58:49,399: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/todo
+2021-05-23 22:58:49,399: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI0NzMxMjUsInN1YiI6IjQ3NyJ9.yCIAf9N5OqBHTC_McRCNqOAwxUPc-m2Nr-r34EomuMA', 'Content-Length': '18', 'Content-Type': 'application/json'}
+2021-05-23 22:58:49,399: DEBUG: 25 发生请求>>>> 请求正文= b'{"is_done": false}'
+2021-05-23 22:58:49,702: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/todo HTTP/1.1" 200 None
+2021-05-23 22:58:49,717: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-23 22:58:49,717: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Sun, 23 May 2021 14:58:49 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a3b5575cc0000362a58090000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=sTGBaYVZkS6W93719zhVG7p8uftAPGvN8aP3HZKVdJ6YDlDGAYosSFgEw6HT1oFD5U7U%2B%2BrfnmdyI4Ya3icO1WHpapdq0sUSuTyJcZE%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '653f2502de6a362a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-23 22:58:49,717: DEBUG: 31 接收响应>>>> 响应正文= {
+ "id": 1072,
+ "title": "null",
+ "is_done": false,
+ "create_datetime": "2021-05-23T14:58:49.469382+00:00",
+ "done_datetime": "2021-05-23T14:58:49.469417+00:00"
+}
+2021-05-25 21:57:59,816: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-25 21:57:59,822: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-25 21:57:59,824: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-25 21:57:59,827: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-25 21:58:02,126: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-25 21:58:02,146: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 21:58:02,147: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 13:58:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a456a7bcc0000d39ae0b1b000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=zfyMl2t%2FJ8AHqtlzvBnFGCO4b00bWabiu2M2w2Rse1h%2FRramAvg7eFDnq4K6R4pzkZdloru9VIS%2BVUR3%2FkOYzNsl3NliCDzaqS2ZvxxMzf6oqadbupdJkwYW"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f46a61e9cd39a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 21:58:02,148: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDIyODAsInN1YiI6IjQ3NyJ9.32f9dSTjCWDINZ3Wu0Q7VgVHIo2ON2J1ePKRP8eO1oI",
+ "token_type": "bearer"
+}
+2021-05-25 22:02:58,840: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-25 22:02:58,846: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-25 22:02:58,846: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-25 22:02:58,847: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-25 22:03:00,753: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-25 22:03:00,772: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:03:00,772: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:02:58 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a456f0a5f00000ccf1e84c000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=p%2Bh%2FVh3P6yAbzahpbTlffZ6yTpO6tJYZ13DeK4djuKaPQCGFYfAXLxwA9dAudrdg1PtGh%2F9%2BYjWWBNzACcUMHftvCgSIvq7XWZXOw7H06i1Gc3dt5UNx2569"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f4df09d360ccf-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:03:00,773: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI1NzgsInN1YiI6IjQ3NyJ9.dkW1aHjA-JW7GMneJI4og8YQDFGQwEJyQz2ApBeoP9o",
+ "token_type": "bearer"
+}
+2021-05-25 22:03:24,805: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-25 22:03:24,806: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-25 22:03:24,806: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-25 22:03:24,807: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-25 22:03:27,592: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-25 22:03:27,594: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:03:27,594: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:03:25 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a456f7346000056dd2b035000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=0QQ8oFhpfJdR3p255hgOj6DFU3inypgLclXMSWoL1u7vbKD%2BDHvI%2BNVAZpZEddfSJWkxq0Y6jc6W8g5Ox1%2Bota0G40tQ2ntp2%2FUPrD6v3gSbSDs9NUFZfLf3"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f4e986e6756dd-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:03:27,595: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI2MDUsInN1YiI6IjQ3NyJ9.LgyGa8OAAthPSp4GARIYHhrxRNqLppFzZdQX23WoBMM",
+ "token_type": "bearer"
+}
+2021-05-25 22:06:15,064: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-25 22:06:15,064: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-25 22:06:15,064: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-25 22:06:15,065: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-25 22:06:16,872: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-25 22:06:16,874: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:06:16,874: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:06:14 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a4572085f0000d37a750b3000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=HVDuWSQ5qjX5S9PgVIv2VrhNmsiPm2mVa6F2PlMgtXo8iupSvHKGgo4OvDSW%2Bzg2zZFFKkiv3lAJ%2BgeeYnjFSzymO%2F5lE1D5fF%2Fmbs1qKb2NaXoMhZY9nCsC"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f52ba2ac4d37a-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:06:16,875: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI3NzQsInN1YiI6IjQ3NyJ9.eqLMl3nX6kCXvlGNAtMiPwfBG7n0KN6vCtC8dK0Qnf4",
+ "token_type": "bearer"
+}
+2021-05-25 22:06:16,883: INFO: 23 发生请求>>>> 接口地址= GET"https://api.tttt.one/rest-v2"/todo
+2021-05-25 22:06:16,883: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI3NzQsInN1YiI6IjQ3NyJ9.eqLMl3nX6kCXvlGNAtMiPwfBG7n0KN6vCtC8dK0Qnf4'}
+2021-05-25 22:06:16,884: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-25 22:06:17,077: INFO: 23 发生请求>>>> 接口地址= GET"https://api.tttt.one/rest-v2"/todo
+2021-05-25 22:06:17,077: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI3NzQsInN1YiI6IjQ3NyJ9.eqLMl3nX6kCXvlGNAtMiPwfBG7n0KN6vCtC8dK0Qnf4'}
+2021-05-25 22:06:17,078: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-25 22:06:17,117: INFO: 23 发生请求>>>> 接口地址= GET"https://api.tttt.one/rest-v2"/todo
+2021-05-25 22:06:17,117: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI3NzQsInN1YiI6IjQ3NyJ9.eqLMl3nX6kCXvlGNAtMiPwfBG7n0KN6vCtC8dK0Qnf4'}
+2021-05-25 22:06:17,117: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-25 22:08:03,234: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-25 22:08:03,235: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-25 22:08:03,235: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-25 22:08:03,236: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-25 22:08:05,095: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-25 22:08:05,097: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:08:05,097: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:08:03 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a4573af1500003636dc101000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=fjTyi1NizXvWXguf7k8epbm6F1k7XpT0rU%2FZ%2FxSa3wdZcp7xRQfTpqQhjABW1nRBxLb3J1ogx8bcraB2IxsrG3GRvV8ww9805yoBDI22iH2qfPLvPiDoaLmC"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f555e881f3636-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:08:05,098: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI4ODIsInN1YiI6IjQ3NyJ9.lt4ZFhZ9XpnHht4dU0FTPdMr_gVIpNmEKchYjQXGYfA",
+ "token_type": "bearer"
+}
+2021-05-25 22:08:05,129: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?result=code&result=res_body
+2021-05-25 22:08:05,130: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI4ODIsInN1YiI6IjQ3NyJ9.lt4ZFhZ9XpnHht4dU0FTPdMr_gVIpNmEKchYjQXGYfA'}
+2021-05-25 22:08:05,130: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-25 22:08:05,656: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?result=code&result=res_body HTTP/1.1" 200 None
+2021-05-25 22:08:05,658: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:08:05,659: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:08:03 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a4573b2d100003636c02af000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=929XN5bLQk%2BDrotxZI2TAUOzq8dgoHDFk67gtr7ElAT%2B92Gr%2BEUtAQNdYXrzmGQzQbk9jwdGxLjs9I9%2Bot4cu2zizt1zHpKXBhqEyZOCXprjMwJ8k006NUom"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f5564880a3636-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:08:05,659: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [
+  {
+   "id": 1072,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T14:58:49.469382+00:00",
+   "done_datetime": "2021-05-23T14:58:49.469417+00:00"
+  },
+  {
+   "id": 1071,
+   "title": "senling",
+   "is_done": false,
+   "create_datetime": "2021-05-23T14:58:49.148636+00:00",
+   "done_datetime": "2021-05-23T14:58:49.148677+00:00"
+  },
+  {
+   "id": 1070,
+   "title": "senling",
+   "is_done": true,
+   "create_datetime": "2021-05-23T14:58:48.641982+00:00",
+   "done_datetime": "2021-05-23T14:58:48.642041+00:00"
+  },
+  {
+   "id": 1069,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T14:58:48.148191+00:00",
+   "done_datetime": "2021-05-23T14:58:48.148243+00:00"
+  },
+  {
+   "id": 1068,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T09:30:02.474862+00:00",
+   "done_datetime": "2021-05-23T09:30:02.474942+00:00"
+  },
+  {
+   "id": 1067,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:34.670188+00:00",
+   "done_datetime": "2021-05-23T05:29:34.670228+00:00"
+  },
+  {
+   "id": 1066,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:34.171019+00:00",
+   "done_datetime": "2021-05-23T05:29:34.171067+00:00"
+  },
+  {
+   "id": 1065,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:33.675362+00:00",
+   "done_datetime": "2021-05-23T05:29:33.675420+00:00"
+  },
+  {
+   "id": 1064,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:33.151416+00:00",
+   "done_datetime": "2021-05-23T05:29:33.151486+00:00"
+  },
+  {
+   "id": 1063,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.846947+00:00",
+   "done_datetime": "2021-05-23T05:29:32.847002+00:00"
+  },
+  {
+   "id": 1062,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.538694+00:00",
+   "done_datetime": "2021-05-23T05:29:32.538741+00:00"
+  },
+  {
+   "id": 1061,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:32.033561+00:00",
+   "done_datetime": "2021-05-23T05:29:32.033601+00:00"
+  },
+  {
+   "id": 1060,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:31.727943+00:00",
+   "done_datetime": "2021-05-23T05:29:31.727980+00:00"
+  },
+  {
+   "id": 1059,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:31.236291+00:00",
+   "done_datetime": "2021-05-23T05:29:31.236374+00:00"
+  },
+  {
+   "id": 1058,
+   "title": "null",
+   "is_done": false,
+   "create_datetime": "2021-05-23T05:29:30.739676+00:00",
+   "done_datetime": "2021-05-23T05:29:30.739747+00:00"
+  }
+ ],
+ "total": 15,
+ "page": 0,
+ "size": 50
+}
+2021-05-25 22:08:05,670: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=1&size=50&result=code&result=res_body
+2021-05-25 22:08:05,671: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI4ODIsInN1YiI6IjQ3NyJ9.lt4ZFhZ9XpnHht4dU0FTPdMr_gVIpNmEKchYjQXGYfA'}
+2021-05-25 22:08:05,671: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-25 22:08:06,181: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=1&size=50&result=code&result=res_body HTTP/1.1" 200 42
+2021-05-25 22:08:06,183: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:08:06,183: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:08:04 GMT', 'Content-Type': 'application/json', 'Content-Length': '42', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a4573b4ee000036369bab6000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=Kda%2BJ8BdnbY3eHN2oeH1PPW3MQoKnyq%2B47ZO5yvKRt6XC8E7EmKnmoKsNkf09%2F7f4xkdGypBAOMkeAymmoTwt2MtV1zLIhw6uF%2Fdz1vXKl%2BxnUutQG%2BE8RJc"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f5567ea443636-LAX', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:08:06,184: DEBUG: 31 接收响应>>>> 响应正文= {
+ "items": [],
+ "total": 15,
+ "page": 1,
+ "size": 50
+}
+2021-05-25 22:08:06,207: INFO: 23 发生请求>>>> 接口地址= GEThttps://api.tttt.one/rest-v2/todo?page=sfaf&size=24rqwdf&result=code&result=res_body
+2021-05-25 22:08:06,208: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDI4ODIsInN1YiI6IjQ3NyJ9.lt4ZFhZ9XpnHht4dU0FTPdMr_gVIpNmEKchYjQXGYfA'}
+2021-05-25 22:08:06,208: DEBUG: 25 发生请求>>>> 请求正文= None
+2021-05-25 22:08:06,705: DEBUG: 452 https://api.tttt.one:443 "GET /rest-v2/todo?page=sfaf&size=24rqwdf&result=code&result=res_body HTTP/1.1" 422 192
+2021-05-25 22:08:06,707: INFO: 29 接收响应>>>> 状态码= 422
+2021-05-25 22:08:06,708: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:08:04 GMT', 'Content-Type': 'application/json', 'Content-Length': '192', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a4573b70600003636af165000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=Mvuk9bP7bIS9jonQ%2B363wt45y3RzbCIDURmdyhmR8rhESyBAHAt9pfBl8lUVBKCCI9oVR%2FXxAnzOVuIM9H7LxXmYqzY4tnmRvD4eW8j%2BP5f5xSr%2FID%2FeMZm%2B"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f556b3b5d3636-LAX', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:08:06,708: DEBUG: 31 接收响应>>>> 响应正文= {
+ "detail": [
+  {
+   "loc": [
+    "query",
+    "page"
+   ],
+   "msg": "value is not a valid integer",
+   "type": "type_error.integer"
+  },
+  {
+   "loc": [
+    "query",
+    "size"
+   ],
+   "msg": "value is not a valid integer",
+   "type": "type_error.integer"
+  }
+ ]
+}
+2021-05-25 22:11:59,361: INFO: 23 发生请求>>>> 接口地址= POSThttps://api.tttt.one/rest-v2/login/access_token
+2021-05-25 22:11:59,378: DEBUG: 24 发生请求>>>> 请求头= {'User-Agent': 'python-requests/2.25.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '59', 'Content-Type': 'application/json'}
+2021-05-25 22:11:59,378: DEBUG: 25 发生请求>>>> 请求正文= b'{"email": "senling@163.com", "password": "senling@163.com"}'
+2021-05-25 22:11:59,379: DEBUG: 971 Starting new HTTPS connection (1): api.tttt.one:443
+2021-05-25 22:12:02,036: DEBUG: 452 https://api.tttt.one:443 "POST /rest-v2/login/access_token HTTP/1.1" 200 None
+2021-05-25 22:12:02,041: INFO: 29 接收响应>>>> 状态码= 200
+2021-05-25 22:12:02,041: DEBUG: 30 接收响应>>>> 响应头= {'Date': 'Tue, 25 May 2021 14:11:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'CF-Cache-Status': 'DYNAMIC', 'cf-request-id': '0a45774c860000eb19c936d000000001', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=4mt6n4Ogk2o%2FOJZ6NJ0K8nOqvEBmgEBh2MEXJadFl1g0meF4hQA%2BHf0aiPpYQ6B6k73h6smJL7Mrda%2BnVclZ1spPhKHLyR2lOtHIWcF3yOyr66DKf0b714Mm"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '654f5b273c70eb19-LAX', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400'}
+2021-05-25 22:12:02,041: DEBUG: 31 接收响应>>>> 响应正文= {
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI2NDMxMTksInN1YiI6IjQ3NyJ9.npqGCAf6s0bJeeAtXQ0YXCiHJIvMvrclmt_D5dJpP-A",
+ "token_type": "bearer"
+}

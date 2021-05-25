@@ -2,7 +2,7 @@ from collections import namedtuple
 from functools import total_ordering
 from re import A
 import re
-
+from conf_read import read
 from _pytest.config import main
 from _pytest.mark import param
 from attr import dataclass
@@ -88,6 +88,8 @@ api_info = dict(
 
 
 )
+
+
 
 @pytest.fixture()
 def user_todo_total(user_session):
@@ -204,18 +206,21 @@ def test_todo_list(user_session,data,user_todo_total):
 }
     ]
 )
-def test_todo_list_data(user_session,params):
+def test_todo_list_data(user_session,params,read_url):
     api_name = "任务列表"
     res = user_session.request(
         api_info[api_name].method,
-        f"{base_url}{api_info[api_name].url}",
+        f"{read_url}{api_info[api_name].url}",
         params=params
     )
     assert res.status_code == params["result"]['code']
     assert res.json().keys() == params["result"]['res_body'].keys()
    
+@pytest.fixture(autouse =True)
+def read_url():
+    url = read('./inter_conf.ini','DEFAULT',"URL")
+    return url
 
-    
 
   
 @pytest.mark.parametrize(
@@ -237,11 +242,11 @@ def test_todo_list_data(user_session,params):
       }
       ]
 )
-def test_todo_establish(user_session,data):
+def test_todo_establish(user_session,data,read_url):
   api_name = "创建任务"
   res = user_session.request(
       api_info[api_name].method,
-      f"{base_url}{api_info[api_name].url}",
+      f"{read_url}{api_info[api_name].url}",
       json = data['body']
   )
 
@@ -250,12 +255,12 @@ def test_todo_establish(user_session,data):
   
 
 @pytest.fixture()
-def New_todo(user_session):
+def New_todo(user_session,read_url):
   api_name = "任务列表"
 
   res = user_session.request(
     api_info[api_name].method,
-    f"{base_url}{api_info[api_name].url}"
+    f"{read_url}{api_info[api_name].url}"
   )
   assert res.status_code == 200
   id = get_jaon(res,'id')
@@ -266,7 +271,7 @@ def New_todo(user_session):
       api_name = "创建任务"
       res = user_session.request(
       api_info[api_name].method,
-      f"{base_url}{api_info[api_name].url}",
+      f"{read_url}{api_info[api_name].url}",
       json = {}
   )
       assert res.status_code == 200
@@ -286,6 +291,6 @@ def test_get_todo(user_session,data):
     res = user_session.request(
       api_info[api_name].method,
       #   https://api.tttt.one/rest-v2/todo{todo_id}.format(todo_id=1067)
-      f"{base_url}{api_info[api_name].url}".format(todo_id = data['body']['id'])
+      f"{read_url}{api_info[api_name].url}".format(todo_id = data['body']['id'])
     )
     assert res.status_code == data['result']['code']
