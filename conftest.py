@@ -1,8 +1,15 @@
 from log import *
 import jsonpath
 import pytest
+from conf_read import read
 base_url = "https://api.tttt.one/rest-v2"
 session = LoggerSession()
+
+
+@pytest.fixture(scope='session')
+def read_url():
+    url = read('./inter_conf.ini', 'DEFAULT', "URL")
+    return url
 
 
 @pytest.fixture(scope="session")
@@ -14,11 +21,11 @@ def user_token():
           """
 
     res = session.request(
-            "POST",
+        "POST",
         f"{base_url}/login/access_token",
         json={
-            "email":"senling@163.com",
-            "password":"senling@163.com"}
+            "email": "senling@163.com",
+            "password": "senling@163.com"}
     )
     if res.json().get("detail") != "Incorrect email or password":
         assert res.status_code == 200
@@ -28,8 +35,8 @@ def user_token():
         res = session.request("POST",
                               f"{base_url}/login/sign_up",
                               json={
-                                "email":"senling@163.com",
-                                "password":"senling@163.com"
+                                  "email": "senling@163.com",
+                                  "password": "senling@163.com"
                               }
                               )
         assert res.status_code == 200
@@ -44,7 +51,6 @@ def user_token():
         return token
 
 
-
 @pytest.fixture(scope="session")
 def user_session(user_token):
     """把 user_token获取到的鉴权信息 添加到请求头 返回
@@ -53,6 +59,3 @@ def user_session(user_token):
     session.headers['Authorization'] = "Bearer "+user_token
     yield session
     session.headers.pop("Authorization")
-
-
-
