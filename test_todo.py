@@ -1,4 +1,5 @@
 from collections import namedtuple
+from operationyaml import *
 from functools import total_ordering
 from re import A
 import re
@@ -284,3 +285,28 @@ def test_get_todo(user_session, data):
             todo_id=data['body']['id'])
     )
     assert res.status_code == data['result']['code']
+
+
+@pytest.fixture()
+def new_todo():
+    page = 11
+    size = 500
+    data = (page, size)
+    return data
+
+
+list1 = []
+
+
+@pytest.mark.parametrize(
+    "data", read_yaml()
+)
+def test_todo_list(user_session, data, new_todo):
+    datas = data['body']
+
+    if type(datas) is dict:
+        if datas['page'] is None:
+            data['body']['page'] = new_todo[0]
+        if datas['size'] is None:
+            data['body']['size'] = new_todo[1]
+        print(data)
