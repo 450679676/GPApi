@@ -276,7 +276,7 @@ def New_todo(user_session, read_url):
         },
     ]
 )
-def test_get_todo(user_session, data):
+def test_get_todo(user_session, data, read_url):
     api_name = "任务详情"
     res = user_session.request(
         api_info[api_name].method,
@@ -295,13 +295,10 @@ def new_todo():
     return data
 
 
-list1 = []
-
-
 @pytest.mark.parametrize(
     "data", read_yaml()
 )
-def test_todo_list(user_session, data, new_todo):
+def test_todo_list(user_session, data, new_todo, read_url):
     datas = data['body']
 
     if type(datas) is dict:
@@ -309,4 +306,7 @@ def test_todo_list(user_session, data, new_todo):
             data['body']['page'] = new_todo[0]
         if datas['size'] is None:
             data['body']['size'] = new_todo[1]
-        print(data)
+
+    res = user_session.request(
+        data['method'], f"{read_url}{data['url']}", params=data['body']
+    )
