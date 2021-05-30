@@ -638,3 +638,66 @@ def test_get_todo(user_session,New_todo):
 
 
 
+# URL管理
+
+项目都有测试环境，预发布环境，和线上环境，这几个环境 都是HOST不同  
+
+而接口地址都是 一样的 所以为了方便在 诸多环境中 切换  需要把 HOST 单独管理
+
+### ini配置文件管理url
+
+新建一个**inter_conf.ini** 文件  定义两个环境的url 
+
+```ini
+[DEFAULT]
+URL=https://api.tttt.one/rest-v2
+
+[ONLINE]
+URL=https://api.tttt.one/rest-v1
+```
+
+### 读取ini文件方法
+
+```python
+"""
+读取ini文件配置信息
+"""
+import configparser
+
+def read(path,selector,option):
+    conf = configparser.ConfigParser()#实例化对象
+
+    conf.read(path) #读取文件内容
+    return conf.get(selector,option) # GET返回配置文件中的DEFAULT下的URL
+
+print(read('./inter_conf.ini','DEFAULT',"URL"))#打印DEFAULT环境下的url
+>>>https://api.tttt.one/rest-v2
+```
+
+### 在用例中调用
+
+这个方法在所有用例中 都要使用  所以写在conftest.py中
+
+```python
+
+@pytest.fixture(scope='session')
+def read_url():
+    url = read('./inter_conf.ini', 'DEFAULT', "URL")
+    return url
+```
+
+```python
+
+@pytest.mark.parametrize(
+    "data", read_yaml()
+)
+def test_todo_list(user_session, new_todo, read_url):
+  
+    res = user_session.request(
+        data['method'], f"{read_url}{data['url']}", params=data['body']
+    )
+    assert res.status_code == data['result']['code']
+```
+
+
+
