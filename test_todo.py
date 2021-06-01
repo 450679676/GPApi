@@ -271,7 +271,7 @@ def New_todo(user_session, read_url):
 @pytest.mark.parametrize(
     "data", [
         {
-            "body": {"id": New_todo},
+            "body": {"id": 1063},
             "result": {"code": 200}
         },
     ]
@@ -289,8 +289,9 @@ def test_get_todo(user_session, data, read_url):
 
 @pytest.fixture()
 def new_todo():
+    """模拟上一个接口的返回"""
     page = 11
-    size = 500
+    size = 50
     data = (page, size)
     return data
 
@@ -310,3 +311,4 @@ def test_todo_list(user_session, data, new_todo, read_url):
     res = user_session.request(
         data['method'], f"{read_url}{data['url']}", params=data['body']
     )
+    assert res.status_code == data['result']['code']
